@@ -70,7 +70,7 @@
 <hr data-start="1376" data-end="1379">
 <h2 data-start="1381" data-end="1409">🏗️ Architecture Overview</h2>
 <p data-start="1411" data-end="1482">FileCo is a <strong data-start="1423" data-end="1435">monorepo</strong> containing both frontend and backend services.</p>
-<pre class="overflow-visible! px-0!" data-start="1484" data-end="1652"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>FileCo/
+<pre class="overflow-visible! px-0!" data-start="1484" data-end="1652"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>FileCo/
 ├── frontend/   </span><span><span class="hljs-comment"># React + Vite (TypeScript)</span></span><span>
 ├── backend/    </span><span><span class="hljs-comment"># NestJS API (TypeScript)</span></span><span>
 ├── docker/     </span><span><span class="hljs-comment"># Worker containers (PDF processing)</span></span><span>
@@ -141,38 +141,6 @@
 <p data-start="2240" data-end="2268"><code data-start="2240" data-end="2251">Tesseract</code> – OCR (optional)</p>
 </li>
 </ul>
-<hr data-start="2270" data-end="2273">
-<h2 data-start="2275" data-end="2310">🚀 Getting Started (Development)</h2>
-<h3 data-start="2312" data-end="2329">Prerequisites</h3>
-<ul data-start="2330" data-end="2364">
-<li data-start="2330" data-end="2345">
-<p data-start="2332" data-end="2345">Node.js (LTS)</p>
-</li>
-<li data-start="2346" data-end="2358">
-<p data-start="2348" data-end="2358">npm / pnpm</p>
-</li>
-<li data-start="2359" data-end="2364">
-<p data-start="2361" data-end="2364">Git</p>
-</li>
-</ul>
-<hr data-start="2366" data-end="2369">
-<h3 data-start="2371" data-end="2383">Frontend</h3>
-<pre class="overflow-visible! px-0!" data-start="2384" data-end="2431"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span><span class="hljs-built_in">cd</span></span><span> frontend
-npm install
-npm run dev
-</span></span></code></div></div></pre>
-<p data-start="2433" data-end="2441">Runs on:</p>
-<pre class="overflow-visible! px-0!" data-start="2442" data-end="2471"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">arduino</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>http:</span><span><span class="hljs-comment">//localhost:5173</span></span><span>
-</span></span></code></div></div></pre>
-<hr data-start="2473" data-end="2476">
-<h3 data-start="2478" data-end="2489">Backend</h3>
-<pre class="overflow-visible! px-0!" data-start="2490" data-end="2542"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span><span class="hljs-built_in">cd</span></span><span> backend
-npm install
-npm run start:dev
-</span></span></code></div></div></pre>
-<p data-start="2544" data-end="2552">Runs on:</p>
-<pre class="overflow-visible! px-0!" data-start="2553" data-end="2582"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">arduino</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>http:</span><span><span class="hljs-comment">//localhost:3000</span></span><span>
-</span></span></code></div></div></pre>
 <hr data-start="2584" data-end="2587">
 <h2 data-start="2589" data-end="2623">🔄 Environment &amp; Security Notes</h2>
 <ul data-start="2625" data-end="2809">
