@@ -1,38 +1,11 @@
 import appContent from "../utilities/AppContent";
 import { v4 as uuidv4 } from "uuid";
 
-const categoryColors = [
-  {
-    border: "#10B981",
-    gradient: "from-[#10B981] to-[#059669]",
-    hover: "#10B981",
-  },
-  {
-    border: "#10B981",
-    gradient: "from-[#10B981] to-[#059669]",
-    hover: "#10B981",
-  },
-  {
-    border: "#8B5CF6",
-    gradient: "from-[#8B5CF6] to-[#7C3AED]",
-    hover: "#8B5CF6",
-  },
-  {
-    border: "#8B5CF6",
-    gradient: "from-[#8B5CF6] to-[#7C3AED]",
-    hover: "#8B5CF6",
-  },
-  {
-    border: "#EF4444",
-    gradient: "from-[#EF4444] to-[#DC2626]",
-    hover: "#EF4444",
-  },
-  {
-    border: "#EF4444",
-    gradient: "from-[#EF4444] to-[#DC2626]",
-    hover: "#EF4444",
-  },
-];
+const colors = {
+  border: "#10B981",
+  gradient: "from-[#10B981] to-[#059669]",
+  hover: "#10B981",
+};
 
 export default function Services() {
   return (
@@ -40,9 +13,7 @@ export default function Services() {
       id="services-container"
       className="w-full px-4 sm:px-6 md:px-8 lg:px-16 py-12 space-y-16"
     >
-      {appContent().map((category, categoryIndex) => {
-        const colors = categoryColors[categoryIndex % categoryColors.length];
-
+      {appContent().map((category) => {
         return (
           <div key={uuidv4()} className="w-full">
             <div

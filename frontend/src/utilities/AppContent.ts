@@ -83,22 +83,22 @@ export default function appContent(): AppContent[] {
         {
           serviceName: "PDF to JPG",
           description: "Convert each PDF page into JPG image(s).",
-          icon: "",
+          icon: "jpg.png",
         },
         {
           serviceName: "PDF to Word",
           description: "Convert a PDF file into a DOC or DOCX to edit.",
-          icon: "",
+          icon: "word-processor.png",
         },
         {
           serviceName: "PDF to PowerPoint",
           description: "Convert a PDF file into an easy to edit PPT slideshow.",
-          icon: "",
+          icon: "powerpoint.png",
         },
         {
           serviceName: "PDF to Excel",
           description: "Pull data from a PDF file into Excel spreadsheets.",
-          icon: "",
+          icon: "excel.png",
         },
       ],
     },
@@ -109,7 +109,7 @@ export default function appContent(): AppContent[] {
           serviceName: "Rotate PDF",
           description:
             "Rotate your PDF pages the way you need them. each PDF page into JPG image(s).",
-          icon: "",
+          icon: "rotate.png",
         },
         {
           serviceName: "PDF Page Numbers",
