@@ -1,5 +1,6 @@
 import appContent from "../utilities/AppContent";
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 const colors = {
   border: "#10B981",
@@ -8,6 +9,12 @@ const colors = {
 };
 
 export default function Services() {
+  const navigate = useNavigate();
+
+  const handleServiceClick = (serviceId: string) => {
+    navigate(`/service/${serviceId}`);
+  };
+
   return (
     <div
       id="services-container"
@@ -46,6 +53,7 @@ export default function Services() {
                   onMouseLeave={(e) =>
                     (e.currentTarget.style.borderColor = "transparent")
                   }
+                  onClick={() => handleServiceClick(service.id)}
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div
@@ -60,7 +68,7 @@ export default function Services() {
                             ).href
                           }
                           alt={service.serviceName}
-                          className="w-6 h-6"
+                          className="w-8 h-8"
                         />
                       ) : (
                         <span className="text-white text-xl font-bold">
