@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <div
       id="header"
-      className="w-full h-14 sm:h-16 md:h-20 lg:h-24 bg-white flex items-center justify-between px-4 sm:px-6 md:px-8 overflow-hidden border-b border-gray-100"
+      className="w-full h-14 sm:h-16 md:h-20 lg:h-24 bg-gray-100 flex items-center justify-between px-4 sm:px-6 md:px-8 overflow-hidden border-b border-gray-100"
     >
       <h1
         onClick={() => (window.location.href = "/")}
