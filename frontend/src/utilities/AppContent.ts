@@ -5,6 +5,9 @@ type AppContent = {
     serviceName: string;
     description: string;
     icon: string;
+    fileType: string;
+    uploadType: "single" | "multiple";
+    uiType: "direct" | "arrange" | "configure";
   }[];
 };
 
@@ -18,6 +21,9 @@ export default function appContent(): AppContent[] {
           serviceName: "Merge PDF",
           description: "Combine PDFs with the desired order.",
           icon: "merge.png",
+          fileType: "pdf",
+          uploadType: "multiple",
+          uiType: "arrange",
         },
         {
           id: "split-pdf",
@@ -25,18 +31,27 @@ export default function appContent(): AppContent[] {
           description:
             "Separate PDF pages into multiple ones based on your need.",
           icon: "partition.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "configure",
         },
         {
           id: "remove-pages",
           serviceName: "Remove Pages",
           description: "Remove selected pages from a PDF file.",
           icon: "delete-file.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "configure",
         },
         {
           id: "organize-pdf",
           serviceName: "Organize PDF",
           description: "Sort, delete, or add PDF pages at your convenience.",
           icon: "sort-data.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "configure",
         },
       ],
     },
@@ -48,12 +63,18 @@ export default function appContent(): AppContent[] {
           serviceName: "Compress PDF",
           description: "Reduce & optimize PDF size keeping maximal quality.",
           icon: "minimize.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "direct",
         },
         {
           id: "repair-pdf",
           serviceName: "Repair PDF",
           description: "Repair & recover data from a corrupted PDF file.",
           icon: "file.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "direct",
         },
       ],
     },
@@ -65,24 +86,36 @@ export default function appContent(): AppContent[] {
           serviceName: "JPG to PDF",
           description: "Convert JPG image(s) to a PDF file.",
           icon: "picture-as-pdf.png",
+          fileType: "image",
+          uploadType: "multiple",
+          uiType: "direct",
         },
         {
           id: "word-to-pdf",
           serviceName: "Word to PDF",
           description: "Convert a DOC or DOCX file into a PDF file.",
           icon: "word-processor.png",
+          fileType: "word",
+          uploadType: "single",
+          uiType: "direct",
         },
         {
           id: "powerpoint-to-pdf",
           serviceName: "PowerPoint to PDF",
           description: "Convert a PPT or PPTX file into a PDF file.",
           icon: "powerpoint.png",
+          fileType: "powerpoint",
+          uploadType: "single",
+          uiType: "direct",
         },
         {
           id: "excel-to-pdf",
           serviceName: "Excel to PDF",
           description: "Convert Excel spreadsheets into a PDF file.",
           icon: "excel.png",
+          fileType: "excel",
+          uploadType: "single",
+          uiType: "direct",
         },
         {
           id: "html-to-pdf",
@@ -90,6 +123,9 @@ export default function appContent(): AppContent[] {
           description:
             "Convert webpages in HTML to PDF by pasting the URL of a website.",
           icon: "html-5.png",
+          fileType: "html",
+          uploadType: "single",
+          uiType: "direct",
         },
       ],
     },
@@ -101,24 +137,36 @@ export default function appContent(): AppContent[] {
           serviceName: "PDF to JPG",
           description: "Convert each PDF page into JPG image(s).",
           icon: "jpg.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "direct",
         },
         {
           id: "pdf-to-word",
           serviceName: "PDF to Word",
           description: "Convert a PDF file into a DOC or DOCX to edit.",
           icon: "word-processor.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "direct",
         },
         {
           id: "pdf-to-powerpoint",
           serviceName: "PDF to PowerPoint",
           description: "Convert a PDF file into an easy to edit PPT slideshow.",
           icon: "powerpoint.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "direct",
         },
         {
           id: "pdf-to-excel",
           serviceName: "PDF to Excel",
           description: "Pull data from a PDF file into Excel spreadsheets.",
           icon: "excel.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "direct",
         },
       ],
     },
@@ -131,6 +179,9 @@ export default function appContent(): AppContent[] {
           description:
             "Rotate your PDF pages the way you need them. each PDF page into JPG image(s).",
           icon: "rotate.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "direct",
         },
         {
           id: "pdf-page-numbers",
@@ -138,6 +189,9 @@ export default function appContent(): AppContent[] {
           description:
             "Add page numbers to your PDF with the desired positions & dimensions.",
           icon: "page.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "configure",
         },
         {
           id: "pdf-watermark",
@@ -145,12 +199,18 @@ export default function appContent(): AppContent[] {
           description:
             "Stamp a text or an image over your PDF at the desired position.",
           icon: "stamp.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "configure",
         },
         {
           id: "crop-pdf",
           serviceName: "Crop PDF",
           description: "Crop margins of the PDF document.",
           icon: "crop.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "configure",
         },
         {
           id: "edit-pdf",
@@ -158,6 +218,9 @@ export default function appContent(): AppContent[] {
           description:
             "Easily add text, images, shapes, or freehand drawings to a PDF and personalize their font, size, and color.",
           icon: "edit-file.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "configure",
         },
       ],
     },
@@ -170,6 +233,9 @@ export default function appContent(): AppContent[] {
           description:
             "With a password, protect your PDF file. Encrypt it for authorization.",
           icon: "file-security.png",
+          fileType: "pdf",
+          uploadType: "single",
+          uiType: "configure",
         },
       ],
     },

@@ -1,12 +1,6 @@
-import appContent from "../utilities/AppContent";
+import appContent from "@/utilities/AppContent";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-
-const colors = {
-  border: "#10B981",
-  gradient: "from-[#10B981] to-[#059669]",
-  hover: "#10B981",
-};
 
 export default function Services() {
   const navigate = useNavigate();
@@ -23,10 +17,7 @@ export default function Services() {
       {appContent().map((category) => {
         return (
           <div key={uuidv4()} className="w-full">
-            <div
-              className="mb-8 pb-4 border-b-2"
-              style={{ borderColor: colors.border }}
-            >
+            <div className="mb-8 pb-4 border-b-2 border-emerald-500">
               <h2 className="text-center font-sans text-2xl md:text-3xl lg:text-4xl font-bold text-[#1F2632]">
                 {category.name}
               </h2>
@@ -41,18 +32,9 @@ export default function Services() {
               {category.services.map((service) => (
                 <div
                   key={uuidv4()}
-                  className={`group bg-white rounded-2xl p-7 shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-transparent transform hover:-translate-y-1 ${
+                  className={`group bg-white rounded-2xl p-7 shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-emerald-500 transform hover:-translate-y-1 ${
                     category.services.length === 1 ? "w-full max-w-xl" : ""
                   }`}
-                  style={{
-                    ["--hover-border-color" as any]: colors.hover,
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.borderColor = colors.border)
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.borderColor = "transparent")
-                  }
                   onClick={() => handleServiceClick(service.id)}
                 >
                   <div className="flex items-center gap-3 mb-4">
@@ -63,8 +45,8 @@ export default function Services() {
                         <img
                           src={
                             new URL(
-                              `../assets/icons/${service.icon}`,
-                              import.meta.url
+                              `../../../assets/icons/${service.icon}`,
+                              import.meta.url,
                             ).href
                           }
                           alt={service.serviceName}

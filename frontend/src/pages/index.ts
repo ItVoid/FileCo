@@ -1,4 +1,5 @@
-import Home from "./Home";
-import ServiceDetails from "./ServiceDetails";
+import Home from "./Home/Home";
+import ServiceDetails from "./ServiceDetails/ServiceDetails";
+import PageNotFound from "./PageNotFound/PageNotFound";
 
-export { Home, ServiceDetails };
+export { Home, ServiceDetails, PageNotFound };
