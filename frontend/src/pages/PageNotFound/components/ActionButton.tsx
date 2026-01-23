@@ -7,7 +7,7 @@ export default function ActionButton() {
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
       <button
         onClick={() => navigate("/")}
-        className="group px-8 py-4 bg-linear-to-r from-[#10B981] to-[#059669] text-white font-semibold rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2"
+        className="hover:cursor-pointer group px-8 py-4 bg-linear-to-r from-[#10B981] to-[#059669] text-white font-semibold rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2"
       >
         <svg
           className="w-5 h-5 group-hover:-translate-x-1 transition-transform"
@@ -26,7 +26,7 @@ export default function ActionButton() {
       </button>
       <button
         onClick={() => navigate(-1)}
-        className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-300 hover:border-[#10B981] hover:text-[#10B981] hover:shadow-lg transition-all duration-300"
+        className="hover:cursor-pointer px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-300 hover:border-[#10B981] hover:text-[#10B981] hover:shadow-lg transition-all duration-300"
       >
         Go Back
       </button>

@@ -44,8 +44,6 @@ export default function MergePdfWorkflow() {
   };
 
   const handleMergePdfs = () => {
-    // TODO: Implement merge functionality
-    console.log("Merging PDFs:", pdfFiles);
     alert("Merge functionality will be implemented soon!");
   };
 
@@ -71,7 +69,7 @@ export default function MergePdfWorkflow() {
                     .querySelector<HTMLInputElement>('input[type="file"]')
                     ?.click()
                 }
-                className="px-4 py-2 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                className="hover:cursor-pointer px-4 py-2 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
               >
                 + Add More Files
               </button>

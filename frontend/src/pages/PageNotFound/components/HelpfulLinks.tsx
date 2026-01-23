@@ -9,7 +9,7 @@ export default function HelpfulLinks() {
       <div className="flex flex-wrap gap-3 justify-center">
         <button
           onClick={() => navigate("/")}
-          className="text-sm text-[#10B981] hover:text-[#059669] font-medium hover:underline transition-colors"
+          className="hover:cursor-pointer text-sm text-[#10B981] hover:text-[#059669] font-medium hover:underline transition-colors"
         >
           Browse All Services
         </button>

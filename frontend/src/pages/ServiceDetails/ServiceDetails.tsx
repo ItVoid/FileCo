@@ -1,10 +1,19 @@
 import { useParams, useNavigate, Navigate } from "react-router-dom";
+import { useEffect } from "react";
 import appContent from "../../utilities/AppContent";
 import { MergePdfWorkflow } from "./components";
 
 export default function ServiceDetails() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+
+  // TO BE FIXED
+  // This is written to fix the scrolled
+  // protect pdf page
+  // but it is a weak ass solution
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
   let foundService = null;
 
   for (const category of appContent()) {

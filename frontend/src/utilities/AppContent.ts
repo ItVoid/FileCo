@@ -176,8 +176,7 @@ export default function appContent(): AppContent[] {
         {
           id: "rotate-pdf",
           serviceName: "Rotate PDF",
-          description:
-            "Rotate your PDF pages the way you need them. each PDF page into JPG image(s).",
+          description: "Rotate your PDF pages the way you need them.",
           icon: "rotate.png",
           fileType: "pdf",
           uploadType: "single",
