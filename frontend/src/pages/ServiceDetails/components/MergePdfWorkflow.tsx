@@ -32,12 +32,17 @@ export default function MergePdfWorkflow() {
     event.preventDefault();
   };
 
+  // handleDrop function handles the reordering of PDF files
+  // when a user drops a dragged item onto a new position.
+  // dropIndex: file position's index
   const handleDrop = (dropIndex: number) => {
     if (draggedIndex === null || draggedIndex === dropIndex) return;
 
+    // shallow copy to avoid direct state mutation
     const newFiles = [...pdfFiles];
-    const [draggedFile] = newFiles.splice(draggedIndex, 1);
-    newFiles.splice(dropIndex, 0, draggedFile);
+    // files reordering
+    const [draggedFile] = newFiles.splice(draggedIndex, 1); // remove
+    newFiles.splice(dropIndex, 0, draggedFile); // insert in new index
 
     setPdfFiles(newFiles);
     setDraggedIndex(null);
@@ -60,7 +65,7 @@ export default function MergePdfWorkflow() {
         <>
           <div className="space-y-4">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 className="text-lg font-semibold text-gray-100">
                 Uploaded Files ({pdfFiles.length})
               </h3>
               <button
@@ -69,15 +74,15 @@ export default function MergePdfWorkflow() {
                     .querySelector<HTMLInputElement>('input[type="file"]')
                     ?.click()
                 }
-                className="hover:cursor-pointer px-4 py-2 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                className="hover:cursor-pointer px-4 py-2 text-sm bg-gray-700 text-gray-200 rounded-lg hover:bg-gray-600 transition-colors"
               >
                 + Add More Files
               </button>
             </div>
 
-            <p className="text-sm text-gray-600 bg-blue-50 border border-blue-200 rounded-lg p-3 flex items-start gap-2">
+            <p className="text-sm text-gray-300 bg-emerald-900/30 border border-emerald-700 rounded-lg p-3 flex items-start gap-2">
               <svg
-                className="w-5 h-5 text-blue-600 mt-0.5 shrink-0"
+                className="w-5 h-5 text-[#10B981] mt-0.5 shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -116,10 +121,10 @@ export default function MergePdfWorkflow() {
                   onDragStart={() => handleDragStart(index)}
                   onDragOver={handleDragOver}
                   onDrop={() => handleDrop(index)}
-                  className={`relative bg-white border-2 rounded-lg p-4 cursor-move hover:shadow-lg transition-all ${
+                  className={`relative bg-gray-700 border-2 rounded-lg p-4 cursor-move hover:shadow-lg transition-all ${
                     draggedIndex === index
                       ? "border-[#10B981] opacity-50"
-                      : "border-gray-200"
+                      : "border-gray-600"
                   }`}
                 >
                   <div className="absolute -top-3 -left-3 w-8 h-8 bg-[#10B981] text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md z-10">
@@ -158,10 +163,10 @@ export default function MergePdfWorkflow() {
                         d="M10.5 13.5h-2v3h2c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5z"
                       />
                     </svg>
-                    <p className="text-xs text-gray-700 font-medium text-center truncate w-full">
+                    <p className="text-xs text-gray-200 font-medium text-center truncate w-full">
                       {pdf.file.name}
                     </p>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-gray-400 mt-1">
                       {(pdf.file.size / 1024 / 1024).toFixed(2)} MB
                     </p>
                   </div>
@@ -173,9 +178,9 @@ export default function MergePdfWorkflow() {
           <button
             onClick={handleMergePdfs}
             disabled={pdfFiles.length < 2}
-            className={`w-full px-6 py-4 font-semibold rounded-lg transition-all transform flex items-center justify-center gap-2 ${
+            className={`hover:cursor-pointer w-full px-6 py-4 font-semibold rounded-lg transition-all transform flex items-center justify-center gap-2 ${
               pdfFiles.length < 2
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                ? "bg-gray-700 text-gray-500 cursor-not-allowed"
                 : "bg-linear-to-r from-[#10B981] to-[#059669] text-white hover:shadow-xl hover:-translate-y-0.5"
             }`}
           >

@@ -47,7 +47,7 @@ export default function FileUploadSection({
   };
 
   return (
-    <div className="">
+    <div>
       <input
         ref={fileInputRef}
         type="file"
@@ -78,9 +78,9 @@ export default function FileUploadSection({
       </button>
 
       <div className="flex items-center gap-4 my-6">
-        <div className="flex-1 h-px bg-gray-300"></div>
-        <span className="text-gray-500 font-medium">or</span>
-        <div className="flex-1 h-px bg-gray-300"></div>
+        <div className="flex-1 h-px bg-gray-600"></div>
+        <span className="text-gray-400 font-medium">or</span>
+        <div className="flex-1 h-px bg-gray-600"></div>
       </div>
 
       <div
@@ -89,8 +89,8 @@ export default function FileUploadSection({
         onDrop={handleDrop}
         className={`border-2 border-dashed rounded-lg p-12 text-center transition-all ${
           isDragging
-            ? "border-[#10B981] bg-green-50"
-            : "border-gray-300 bg-gray-50"
+            ? "border-[#10B981] bg-emerald-900/20"
+            : "border-gray-600 bg-gray-800"
         }`}
       >
         <svg
@@ -108,10 +108,10 @@ export default function FileUploadSection({
             d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
           />
         </svg>
-        <p className="text-lg font-medium text-gray-700 mb-2">
+        <p className="text-lg font-medium text-gray-200 mb-2">
           Drag and drop your {multiple ? "files" : "file"} here
         </p>
-        <p className="text-sm text-gray-500">{fileTypeLabel}</p>
+        <p className="text-sm text-gray-400">{fileTypeLabel}</p>
       </div>
     </div>
   );

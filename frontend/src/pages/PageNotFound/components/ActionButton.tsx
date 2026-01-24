@@ -26,7 +26,7 @@ export default function ActionButton() {
       </button>
       <button
         onClick={() => navigate(-1)}
-        className="hover:cursor-pointer px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-300 hover:border-[#10B981] hover:text-[#10B981] hover:shadow-lg transition-all duration-300"
+        className="hover:cursor-pointer px-8 py-4 bg-gray-800 text-gray-300 font-semibold rounded-xl border-2 border-gray-600 hover:border-[#10B981] hover:text-[#10B981] hover:shadow-lg transition-all duration-300"
       >
         Go Back
       </button>

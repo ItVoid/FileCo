@@ -4,7 +4,7 @@ import { Home, ServiceDetails, PageNotFound } from "./pages";
 export default function App() {
   return (
     <BrowserRouter>
-      <div id="app-container" className="min-h-screen bg-gray-100">
+      <div id="app-container" className="min-h-screen bg-gray-900">
         <Routes>
           <Route path="/" element={<Home />} />
           {/* ":id" is caught by useParams<{ id: string }>(); */}

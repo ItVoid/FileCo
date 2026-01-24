@@ -27,11 +27,11 @@ export default function ServiceDetails() {
   if (!foundService) return <Navigate to="/404" replace />;
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-900">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <button
           onClick={() => navigate("/")}
-          className="hover:cursor-pointer mb-8 flex items-center gap-2 text-gray-600 hover:text-[#10B981] transition-colors"
+          className="hover:cursor-pointer mb-8 flex items-center gap-2 text-gray-400 hover:text-[#10B981] transition-colors"
         >
           <svg
             className="w-5 h-5"
@@ -49,7 +49,7 @@ export default function ServiceDetails() {
           Back to Home
         </button>
 
-        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+        <div className="bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-md">
               {foundService.icon ? (
@@ -70,7 +70,7 @@ export default function ServiceDetails() {
               )}
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-[#1F2632]">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-100">
                 {foundService.serviceName}
               </h1>
             </div>
@@ -78,7 +78,7 @@ export default function ServiceDetails() {
 
           <div className="space-y-6">
             <div>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-400 text-lg leading-relaxed">
                 {foundService.description}
               </p>
             </div>

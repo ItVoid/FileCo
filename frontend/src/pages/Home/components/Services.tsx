@@ -18,7 +18,7 @@ export default function Services() {
         return (
           <div key={uuidv4()} className="w-full">
             <div className="mb-8 pb-4 border-b-2 border-emerald-500">
-              <h2 className="text-center font-sans text-2xl md:text-3xl lg:text-4xl font-bold text-[#1F2632]">
+              <h2 className="text-center font-sans text-2xl md:text-3xl lg:text-4xl font-bold text-gray-100">
                 {category.name}
               </h2>
             </div>
@@ -32,7 +32,7 @@ export default function Services() {
               {category.services.map((service) => (
                 <div
                   key={uuidv4()}
-                  className={`group bg-white rounded-2xl p-7 shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-emerald-500 transform hover:-translate-y-1 ${
+                  className={`group bg-gray-800 rounded-2xl p-7 shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-gray-700 hover:border-emerald-500 transform hover:-translate-y-1 ${
                     category.services.length === 1 ? "w-full max-w-xl" : ""
                   }`}
                   onClick={() => handleServiceClick(service.id)}
@@ -58,11 +58,11 @@ export default function Services() {
                         </span>
                       )}
                     </div>
-                    <h3 className="font-bold text-lg text-[#1F2632]">
+                    <h3 className="font-bold text-lg text-gray-100">
                       {service.serviceName}
                     </h3>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-400 leading-relaxed">
                     {service.description}
                   </p>
                 </div>
