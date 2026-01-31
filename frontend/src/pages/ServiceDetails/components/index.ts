@@ -1,3 +1,3 @@
-import MergePdfWorkflow from "./MergePdfWorkflow";
+import FileUploadSection from "./FileUploadSection";
 
-export { MergePdfWorkflow };
+export { FileUploadSection };

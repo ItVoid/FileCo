@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FileUploadSection from "../components/FileUploadSection";
+import { FileUploadSection } from "../components";
 
 interface PdfFile {
   id: string;
@@ -7,7 +7,7 @@ interface PdfFile {
   preview: string;
 }
 
-export default function MergePdfWorkflow() {
+export default function MergePdfService() {
   const [pdfFiles, setPdfFiles] = useState<PdfFile[]>([]);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
 
@@ -48,9 +48,7 @@ export default function MergePdfWorkflow() {
     setDraggedIndex(null);
   };
 
-  const handleMergePdfs = () => {
-    alert("Merge functionality will be implemented soon!");
-  };
+  const handleMergePdfs = () => {};
 
   return (
     <div className="space-y-8">
