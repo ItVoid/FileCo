@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { FileUploadSection } from "../components";
 
-interface PdfFile {
+type PdfFile = {
   id: string;
   file: File;
   preview: string;
-}
+};
 
 export default function MergePdfService() {
   const [pdfFiles, setPdfFiles] = useState<PdfFile[]>([]);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
+  // const [validationError, setValidationError] = useState<ValidationError[]>([]);
 
   const handleFilesSelected = (files: File[]) => {
     const newPdfFiles: PdfFile[] = files.map((file) => ({
