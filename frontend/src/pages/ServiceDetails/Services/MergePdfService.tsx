@@ -49,7 +49,9 @@ export default function MergePdfService() {
     setDraggedIndex(null);
   };
 
-  const handleMergePdfs = () => {};
+  const handleMergePdfs = () => {
+    // validate
+  };
 
   return (
     <div className="space-y-8">

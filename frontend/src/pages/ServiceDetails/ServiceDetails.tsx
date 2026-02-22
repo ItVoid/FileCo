@@ -1,7 +1,7 @@
 import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import appContent from "../../utilities/AppContent";
-import { MergePdfWorkflow } from "./components";
+import { MergePdfService } from "./Services";
 
 export default function ServiceDetails() {
   const { id } = useParams<{ id: string }>();
@@ -83,7 +83,7 @@ export default function ServiceDetails() {
               </p>
             </div>
 
-            {foundService.uiType === "arrange" && <MergePdfWorkflow />}
+            {foundService.uiType === "arrange" && <MergePdfService />}
 
             {foundService.uiType === "direct" && (
               <div className="text-center text-gray-500 py-8">
