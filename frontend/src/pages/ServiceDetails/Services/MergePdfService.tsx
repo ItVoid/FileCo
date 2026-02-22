@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { FileUploadSection } from "../components";
+import {
+  type ValidationError,
+  validatePdfFile,
+  checkDuplicate,
+  checkFileCount,
+} from "../../../utilities/PdfValidation";
 
 type PdfFile = {
   id: string;
@@ -10,15 +16,52 @@ type PdfFile = {
 export default function MergePdfService() {
   const [pdfFiles, setPdfFiles] = useState<PdfFile[]>([]);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
-  // const [validationError, setValidationError] = useState<ValidationError[]>([]);
+  const [validationErrors, setValidationErrors] = useState<ValidationError[]>(
+    [],
+  );
 
-  const handleFilesSelected = (files: File[]) => {
-    const newPdfFiles: PdfFile[] = files.map((file) => ({
-      id: crypto.randomUUID(),
-      file,
-      preview: URL.createObjectURL(file),
-    }));
-    setPdfFiles((prev) => [...prev, ...newPdfFiles]);
+  const handleFilesSelected = async (files: File[]) => {
+    const errors: ValidationError[] = [];
+    const validFiles: PdfFile[] = [];
+
+    // check file count limit
+    const countError = checkFileCount(pdfFiles.length, files.length);
+    if (countError) {
+      setValidationErrors([{ fileName: "Upload", message: countError }]);
+      return;
+    }
+
+    for (const file of files) {
+      // check for duplicates
+      if (checkDuplicate(pdfFiles, file) || checkDuplicate(validFiles, file)) {
+        errors.push({
+          fileName: file.name,
+          message: "File already exists",
+        });
+        continue;
+      }
+
+      // validate PDF file
+      const validationError = await validatePdfFile(file);
+      if (validationError) {
+        errors.push({
+          fileName: file.name,
+          message: validationError,
+        });
+        continue;
+      }
+
+      validFiles.push({
+        id: crypto.randomUUID(),
+        file,
+        preview: URL.createObjectURL(file),
+      });
+    }
+
+    setValidationErrors(errors);
+    if (validFiles.length > 0) {
+      setPdfFiles((prev) => [...prev, ...validFiles]);
+    }
   };
 
   const handleRemoveFile = (id: string) => {
@@ -50,11 +93,55 @@ export default function MergePdfService() {
   };
 
   const handleMergePdfs = () => {
-    // validate
+    if (pdfFiles.length < 2) {
+      setValidationErrors([
+        {
+          fileName: "Merge",
+          message: "At least 2 PDF files are required to merge",
+        },
+      ]);
+      return;
+    }
+    setValidationErrors([]);
   };
 
   return (
     <div className="space-y-8">
+      {validationErrors.length > 0 && (
+        <div className="bg-red-900/30 border border-red-700 rounded-lg p-4 space-y-2">
+          <div className="flex items-center gap-2 text-red-400 font-medium">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            Validation Errors
+          </div>
+          <ul className="text-sm text-red-300 space-y-1 ml-7">
+            {validationErrors.map((error, index) => (
+              <li key={index}>
+                <span className="font-medium">{error.fileName}:</span>{" "}
+                {error.message}
+              </li>
+            ))}
+          </ul>
+          <button
+            onClick={() => setValidationErrors([])}
+            className="text-xs text-red-400 hover:text-red-300 ml-7 underline"
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
+
       {pdfFiles.length === 0 ? (
         <FileUploadSection
           multiple={true}
